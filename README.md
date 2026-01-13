@@ -28,6 +28,14 @@ for i = 1 to n:
                 P[i, w] P[i-1, w]
             else: # No puedo agregar objeto por su peso
                 P[i, w] = p[i-1, w]
-    
+
         
 • Algoritmo voraz
+
+
+Preguntas:
+¿Qué aprendieron sobre la relación entre diseño algorítmico y desempeño real?
+¿Hubo sorpresas en los resultados experimentales?
+¿Cómo influye la naturaleza del problema en la elección de la estrategia?
+
+    
