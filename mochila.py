@@ -2,6 +2,7 @@ import random
 import time
 import matplotlib.pyplot as plt
 
+
 # FUERZA BRUTA
 def mochila_fuerza_bruta(pesos, beneficios, capacidad):
     n = len(pesos)
@@ -33,10 +34,7 @@ def mochila_fuerza_bruta(pesos, beneficios, capacidad):
 
     return mejor_beneficio, objetos_elegidos
 
-
-# --------------------------------------------------
 # PROGRAMACIÓN DINÁMICA
-# --------------------------------------------------
 def mochila_programacion_dinamica(pesos, beneficios, capacidad):
     n = len(pesos)
     tabla = [[0] * (capacidad + 1) for _ in range(n + 1)]
@@ -66,9 +64,7 @@ def mochila_programacion_dinamica(pesos, beneficios, capacidad):
     return tabla[n][capacidad], objetos_elegidos
 
 
-# --------------------------------------------------
 # GENERAR INSTANCIA DE PRUEBA
-# --------------------------------------------------
 def generar_instancia(n, capacidad, inicial=None):
     if inicial is not None:
         random.seed(inicial)
@@ -78,9 +74,7 @@ def generar_instancia(n, capacidad, inicial=None):
     return pesos, beneficios, capacidad
 
 
-# --------------------------------------------------
 # MEDIR TIEMPO DE EJECUCIÓN
-# --------------------------------------------------
 def medir_tiempo(funcion, pesos, beneficios, capacidad, repeticiones=3):
     mejor_tiempo = float("inf")
     resultado = None
@@ -93,10 +87,6 @@ def medir_tiempo(funcion, pesos, beneficios, capacidad, repeticiones=3):
 
     return mejor_tiempo, resultado
 
-
-# --------------------------------------------------
-# MAIN
-# --------------------------------------------------
 def main():
     tamanios = [10, 12, 14, 16, 18, 20, 22]
     capacidad = 60
@@ -126,9 +116,7 @@ def main():
             f"DP={tiempo_dp:.6f}s | Óptimo={res_dp[0]}"
         )
 
-    # --------------------------------------------------
     # GRÁFICA
-    # --------------------------------------------------
     plt.figure()
     plt.plot(tamanios, tiempos_bruta, marker="o", label="Fuerza bruta")
     plt.plot(tamanios, tiempos_dp, marker="o", label="Programación dinámica")
