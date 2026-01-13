@@ -2,6 +2,7 @@ import random
 import time
 import matplotlib.pyplot as plt
 
+
 # FUERZA BRUTA
 def mochila_fuerza_bruta(pesos, beneficios, capacidad):
     n = len(pesos)
